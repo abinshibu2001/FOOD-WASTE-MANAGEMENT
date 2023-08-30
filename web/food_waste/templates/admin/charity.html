@@ -1,0 +1,29 @@
+{% include 'admin/header.html' %}
+<br><br><br>
+	<table align="center" style="width: 1000px">
+		<h2 align="center">Manage charity</h2>
+		<tr>
+			<th>Charity Name</th>
+			<th>Latitude</th>
+			<th>Longitude</th>
+			<th>phone</th>
+			<th>Email</th>
+		</tr>
+		<tbody>
+			{% for row in data['viewcharity'] %}
+			<tr>
+				<td>{{row['charity_name']}}</td>
+				<td>{{row['latitude']}}</td>
+				<td>{{row['longitude']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['email']}}</td>
+			{% if row['usertype']=="pending" %}
+			<td><a href="/admin/charityaccept?id={{row['login_id']}}">Accept</a></td>
+			{% endif %}
+
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</form>
+{% include 'public/footer.html' %}

@@ -1,0 +1,30 @@
+{% include 'charity/header.html' %}
+<form method="post">
+	<table align="center" style="width: 500px" class="table">
+		<h2 align="center">Add feedback</h2>
+		<tr>
+			<th>feedback</th>
+			<td><input type="text" name="desc" required="" class="form-control" style="width: 500px"></td>
+		</tr>
+			<td align="center" colspan="2"><input type="submit" name="submit" value="submit"></td>
+		</tr>
+	</table>
+	 <!-- <div id="dvMap" style="width: 600px; height: 400px"></div> -->
+	 <table align="center" border="" class="table" style="width: 1000px">
+	 	<h2 align="center">View Feedback</h2>
+	 	<tr>
+	 		<th>description</th>
+	 		<th>date</th>
+	 	</tr>
+	 	<tbody>
+	 		{% for row in data['viewfeed'] %}
+	 		<tr>
+	 			<td>{{row['feedback_description']}}</td>
+	 			<td>{{row['date']}}</td>
+	 			<td><a href="?action=delete&id={{row['feedback_id']}}">Delete</a></td>
+	 		</tr>
+	 		{% endfor %}
+	 	</tbody>
+	 </table>
+</form>
+{% include 'public/footer.html' %}

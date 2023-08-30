@@ -1,0 +1,23 @@
+{% include '/volunteer/header.html' %}
+<h2 align="center">view food Request</h2>
+	<table align="center" border="1" style=" width: 500px">
+		<tr>
+			<th>Charity Name</th>
+			<th>Date Time</th>
+			<th>Quantity</th>
+			<th>Reques</th>
+		</tr>
+		<tbody>
+			{% for row in data['viewreq'] %}
+			<tr> 
+				<td>{{row['charity_name']}}</td>
+				<td>{{row['date_time']}}</td>
+				<td>{{row['quantity_required']}}</td> 
+				<td>{{row['request_status']}}</td>
+				
+
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% include 'public/footer.html' %}

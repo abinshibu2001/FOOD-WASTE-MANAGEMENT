@@ -1,0 +1,69 @@
+{% include 'admin/header.html' %}
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3MPnSnyWwNmpnVEFkaddVvy_GWtxSejs&sensor=false"></script>
+    <script type="text/javascript">
+        // window.onload = function () {
+        	function myFunction(){
+            var mapOptions = {
+                center: new google.maps.LatLng(9.9763482, 76.286272),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var infoWindow = new google.maps.InfoWindow();
+            var latlngbounds = new google.maps.LatLngBounds();
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+            google.maps.event.addListener(map, 'click', function (e) {
+                alert("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
+                document.getElementById('lati').value = e.latLng.lat();
+                document.getElementById('longi').value = e.latLng.lng();
+
+            });
+        }
+    </script>
+<style type="text/css">
+	
+</style>
+
+<form method="post">
+	
+	<table align=center style="width: 500px">
+		<h2 align="center">Refrigerator</h2>
+		<tr>
+		<th>Latitude</th>
+		<td><input type="text" name="lat" id="lati" style="width: 500px" class="form-control"></td>
+		</tr>
+
+		<tr>
+		<th>Longitude</th>
+		<td><input type="text" name="long" id="longi"style="width: 500px" class="form-control"></td>
+
+		<tr><td><a onclick="myFunction();">View Map</a></td></tr>
+		</tr>
+
+		<!-- <tr>
+			<th>Food status</th>
+			<td><input type="text" name="status" style="width: 500px" class="form-control"></td>
+		</tr> -->
+		<tr><td align="center" colspan="2"><input type="submit" name="submit" value="submit"></td></tr>
+	</table>
+
+ <div id="dvMap" style="width: 600px; height: 400px"></div>
+	<table align="center" style="width:  1000px">
+		<tr>
+			<th>Latitude</th>
+			<th>Longitude</th>
+			
+		</tr>
+		<tbody>
+			{% for row in data['viewref'] %}
+			<tr>
+				<td>{{row['latitude']}}</td>
+				<td>{{row['longitude']}}</td>
+				<td><a href="?action=delete&id={{row['ref_id']}}">Delete</a></td>
+				<td><a href="?action=update&id={{row['ref_id']}}">Update</a></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</form>
+{% include 'public/footer.html'%}

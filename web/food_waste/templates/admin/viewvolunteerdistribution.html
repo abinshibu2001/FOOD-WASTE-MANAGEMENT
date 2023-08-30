@@ -1,0 +1,24 @@
+{% include 'admin/header.html' %}
+<h2 align="center">Manage Volnteer</h2>
+	<table align="center" style="width: 1000px">
+		<tr>
+			<th>Volunteer Name</th>
+			<th>pick up from</th>
+			<th>pick date</th>
+			<th>Charity Name</th>
+			<th>Distribution Date</th>
+		</tr>
+		<tbody>
+			{% for row in data['viewavail'] %}
+			<tr>
+				<td>{{row['Name']}}</td>
+				<td>{{row['pick_up_type']}}</td>
+				<td>{{row['pick_up_date_time']}}</td>
+				<td>{{row['charity_name']}}</td>
+				<td>{{row['distributed_date_time']}}</td>
+
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% include 'public/footer.html' %}

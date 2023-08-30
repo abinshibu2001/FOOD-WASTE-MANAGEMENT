@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.foodwaste_management"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/f11"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.foodwaste_management.Login"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name="com.example.foodwaste_management.IPsetting" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.foodwaste_management.Registration" >
+        </activity>
+        <activity
+            android:name="com.example.foodwaste_management.Volunteers_home"
+            android:label="@string/title_activity_volunteers_home" >
+        </activity>
+        <activity
+            android:name="com.example.foodwaste_management.Volunteers_view_food_request"
+            android:label="@string/title_activity_volunteers_view_food_request" >
+        </activity>
+        <activity
+            android:name="com.example.foodwaste_management.Volunteers_view_food_availability"
+            android:label="@string/title_activity_volunteers_view_food_availability" >
+        </activity>
+        <activity
+            android:name="com.example.foodwaste_management.Volunteers_view_nearby_refrigerators"
+            android:label="@string/title_activity_volunteers_view_nearby_refrigerators" >
+        </activity>
+        <activity
+            android:name="com.example.foodwaste_management.Volunteers_distribute_food"
+            android:label="@string/title_activity_volunteers_distribute_food" >
+        </activity>
+        <activity
+            android:name="com.example.foodwaste_management.Guest_home"
+            android:label="@string/title_activity_guest_home" >
+        </activity>
+        <activity
+            android:name="com.example.foodwaste_management.Guest_add_food"
+            android:label="@string/title_activity_guest_add_food" >
+        </activity>
+        <activity
+            android:name="com.example.foodwaste_management.Guest_nearby_refrigerators"
+            android:label="@string/title_activity_guest_nearby_refrigerators" >
+        </activity>
+    </application>
+
+</manifest>

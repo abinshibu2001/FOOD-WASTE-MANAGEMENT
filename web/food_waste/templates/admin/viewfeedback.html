@@ -1,0 +1,21 @@
+{% include 'admin/header.html' %}
+<h2 align="center">Manage Volnteer</h2>
+	<table align="center" style="width: 1000px">
+		<tr>
+			<th>feedback from</th>
+			<th>Description</th>
+			<th>Date</th>
+		</tr>
+		<tbody>
+			{% for row in data['viewfeed'] %}
+			<tr>
+				<td>{{row['sender_type']}}</td>
+				<td>{{row['feedback_description']}}</td>
+				<td>{{row['date']}}</td>
+				
+
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% include 'public/footer.html' %}

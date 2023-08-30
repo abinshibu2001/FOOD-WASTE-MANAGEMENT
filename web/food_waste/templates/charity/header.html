@@ -1,0 +1,143 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<li><a href="/admin/home">Home</a></li>
+<li><a href="/admin/viewvol">volunteer</a></li>
+
+<li><a href="/admin/managehotel">Hotel</a></li>
+<li><a href="/admin/managecharity">Charity</a></li>
+<li><a href="/admin/viewref">Refigerator</a></li>
+<li><a href="/admin/viewreq">View charity food request</a></li>
+<li><a href="/admin/viewfeed">View feedback</a></li>
+<li><a href="/admin/viewfood">View Foodavaillability</a></li>
+<li><a href="/admin/viewavail">View volunteer distribution</li>
+<li><a href="/">Logout</a></li> -->
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Food waste Management</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/themify-icons.css">
+    <link rel="stylesheet" href="/static/css/nice-select.css">
+    <link rel="stylesheet" href="/static/css/flaticon.css">
+    <link rel="stylesheet" href="/static/css/gijgo.css">
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <link rel="stylesheet" href="/static/css/slick.css">
+    <link rel="stylesheet" href="/static/css/slicknav.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area ">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="/static/img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu   d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="/charity/home"">home</a></li>
+                                        <!-- <li><a href="/log">Login</a></li>
+                                        <li><a href="/managevol">Volunteer Registeration</a></li> -->
+                                        <li><a href="#">Manage Page <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                           <li><a href="/charity/feedback">Charity feedback</a></li>
+                                            <li><a href="/charity/foodreq">Send food request</a></li>
+<!-- 
+<li><a href="/admin/managehotel">Hotel</a></li>
+<li><a href="/admin/managecharity">Charity</a></li>
+<li><a href="/admin/viewref">Refigerator</a></li> -->
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"> viewpages <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                               
+<li><a href="/charity/viewrefi">View refrigerator</a></li>
+<li><a href="/charity/viewreceived">Receive food from volunteers</a></li>
+<!-- <li><a href="/admin/viewfood">View Foodavaillability</a></li>
+<li><a href="/admin/viewavail">View volunteer distribution</li>
+    <li>
+        <a href="/admin/regviewvol">View Registered volunteer</a>   </li> -->
+ 
+                                            </ul>
+                                        </li>
+                                        <li><a href="/">Logout</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="search_icon">
+                                <a href="#">
+                                    <i class="ti-search"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider  d-flex align-items-center slider_bg_1">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-8 ">
+                        <div class="slider_text text-center">
+                            <div class="text">
+                                <!-- <h3>
+                                    Chicken dish with per boiled egg 
+                                </h3> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+    {% for message in messages %}
+    <script>alert("{{ message }}")</script>
+    {% endfor %}
+
+    {% endif %}
+    {% endwith %} 

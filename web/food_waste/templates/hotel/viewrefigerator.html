@@ -1,0 +1,25 @@
+{% include 'hotel/header.html' %}
+<form method="post">
+	<table align="center" class="table" style="width: 1000px">
+		<h2 align="center">Refrigerator</h2>
+		<tr>
+		<th>Latitude</th>
+		<th>Logitude</th>
+		<th>free</th>
+	</tr>
+	<tbody>
+		{% for row in data['viewref'] %}
+		<tr>
+			<td>{{row['latitude']}}</td>
+
+			<td>{{row['longitude']}}</td>
+			<td>{{row['food_status']}}</td>
+			<td><a href="/hotel/available?id={{row['ref_id']}}">Available</a></td>
+			<td><a href="/hotel/unavailable?id={{row['ref_id']}}">Unavailable</a></td>
+
+		</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+</form>
+{% include 'public/footer.html' %}

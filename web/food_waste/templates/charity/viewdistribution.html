@@ -1,0 +1,20 @@
+{% include 'charity/header.html' %}
+<form method="post">
+	<table align="center" class="table" style="width: 1000px">
+		<tr>
+		<th>volunteer Name</th>
+	
+	</tr>
+	<tbody>
+		{% for row in data['viewvol'] %}
+		<tr>
+			<td>{{row['first_name']}} {{row['last_name']}}</td>
+			{% if row['status']=="handover"%}
+			<td><a href="/charity/rec?id={{row['availability_id']}}">Received</a></td>
+			{% endif %}
+		</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+</form>
+{% include 'public/footer.html' %}

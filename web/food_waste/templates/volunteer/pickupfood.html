@@ -1,0 +1,53 @@
+{% include 'volunteer/header.html' %}
+<form method="post">
+	<h2 align="center">Pick Foods and Distribute</h2>
+<table align="center">
+	<tr>
+		<th>pickup from</th>
+		<td><select name="pname"  class="form-control" style="width: 500px">
+			<option>select</option>
+		{% for row in data['viewpick'] %}
+		<option value="{{row['hotel_id']}}">{{row['hotel_name']}}</option>
+		{% endfor %}</td>
+	</tr>	
+	<tr>
+		<th>pickup datetime</th>
+		<td><input type="datetime-local" name="datetime"required="" class="form-control" style="width: 500px"></td>
+	</tr>
+	<tr>
+		<th>Charity</th>
+		<td><select name="cname" class="form-control" style="width: 500px">
+			<option>select</option>
+		{% for row in data['viewpick'] %}
+		<option value="{{row['charity_id']}}">{{row['charity_name']}}</option>
+		{% endfor %}</td>
+	</tr>
+	<tr>
+		<th>distributed datetime</th>
+		<td><input type="datetime-local" name="time" required="" class="form-control" style="width: 500px"></td>
+	</tr>
+	<tr>
+		<td align="center" colspan="2"><input type="submit" name="submit" value="submit"></td>
+	</tr>
+</table> <br><br>
+<table align="center" class="table" style="width: 1000px">
+	<tr>
+		<th>HotelName</th>
+		<th>pickup from</th>
+		<th>pickup date</th>
+		<th>Charity</th>
+		<th>distributed date</th>
+	</tr>
+	<tbody>
+		{% for row in data['viewpick'] %}<tr>
+		<td>{{row['hotel_name']}}</td>
+		<td>{{row['pick_up_type']}}</td>
+		<td>{{row['pick_up_date_time']}}</td>
+		<td>{{row['charity_name']}}</td>
+		<td>{{row['distributed_date_time']}}</td>
+		<td><a href="?action=delete&id={{row['distribution_id']}}">delete</a></td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+</form>
+{% include 'public/footer.html' %}

@@ -1,0 +1,21 @@
+{% include 'volunteer/header.html' %}
+<form method="post">
+	<h2 align="center"><u>View Refrigerator</u></h2>
+<table align="center" style="width:  1000px">
+		<tr>
+			<th>Latitude</th>
+			<th>Longitude</th>
+			<th>status</th>
+		</tr>
+		<tbody>
+			{% for row in data['viewref'] %}
+			<tr>
+				<td>{{row['latitude']}}</td>
+				<td>{{row['longitude']}}</td>
+				<td>{{row['food_status']}}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</form>
+{% include 'public/footer.html' %}

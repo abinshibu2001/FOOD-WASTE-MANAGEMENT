@@ -1,0 +1,27 @@
+{% include 'admin/header.html' %}
+<h2 align="center">View Food Availability</h2>
+	<table align="center" style="width: 1000px">
+		<tr>
+			<th>Name</th>
+			<th>latitude</th>
+			<th>longitude</th>
+			<th>date_time</th>
+			
+		</tr>
+		<tbody>
+			{% for row in data['viewfood'] %}
+			<tr>
+				<td>{{row['provider_type']}}</td>
+				<td>{{row['latitude']}}</td>
+				<td>{{row['longitude']}}</td>
+				<td>{{row['date_time']}}</td>
+				<!-- <td>{{row['email']}}</td>
+				{% if row['usertype']=="pending" %}
+				<td><a href="/admin/hotelaccept?id={{row['login_id']}}">Accept</a></td>
+				{% endif %} -->
+
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% include 'public/footer.html' %}

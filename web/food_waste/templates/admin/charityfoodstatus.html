@@ -1,0 +1,25 @@
+{% include 'admin/header.html' %}
+<h2 align="center">view food status</h2>
+	<table align="center" border="1" style=" width: 500px">
+		<tr>
+			<!-- <th>Charity Name</th>
+			<th>Date Time</th>
+			<th>Quantity</th> -->
+			<th>Charity Name</th>
+			<th>Quantity</th>
+		</tr>
+		<tbody>
+			{% for row in data['viewreq'] %}
+			<tr><!-- 
+				<td>{{row['charity_name']}}</td>
+				<td>{{row['date_time']}}</td>
+				<td>{{row['quantity_required']}}</td> -->
+				<td>{{row['charity_name']}}</td>
+				<td>{{row['quantity_required']}}</td>
+				
+
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% include 'public/footer.html' %}

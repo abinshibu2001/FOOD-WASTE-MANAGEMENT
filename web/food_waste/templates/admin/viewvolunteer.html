@@ -1,0 +1,28 @@
+{% include 'admin/header.html' %}
+<h2 align="center">Manage Volnteer</h2>
+	<table align="center" style="width: 1000px">
+		<tr>
+			<th>Name</th>
+			<th>Gender</th>
+			<th>Age</th>
+			<th>phone</th>
+			<th>Email</th>
+		</tr>
+		<tbody>
+			{% for row in data['viewvol'] %}
+			<tr>
+				<td>{{row['Name']}}</td>
+				<td>{{row['gender']}}</td>
+				<td>{{row['age']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['email']}}</td>
+				{% if row['usertype']=="nill" %}
+				<td><a href="/admin/accept?id={{row['login_id']}}">Accept</a></td>
+				<td><a href="/admin/reject?id={{row['login_id']}}">Reject</a></td>
+				{% endif %}
+
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% include 'public/footer.html' %}

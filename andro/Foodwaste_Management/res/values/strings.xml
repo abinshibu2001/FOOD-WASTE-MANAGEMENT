@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Potluck</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_volunteers_home">Home</string>
+    <string name="title_activity_volunteers_view_food_request">Food Request</string>
+    <string name="title_activity_volunteers_view_food_availability">Food Availability</string>
+    <string name="title_activity_volunteers_view_nearby_refrigerators">Nearby Refrigerators</string>
+    <string name="title_activity_volunteers_distribute_food">Distribute Food</string>
+    <string name="title_activity_guest_home">Guest Home</string>
+    <string name="title_activity_guest_add_food">Add Food</string>
+    <string name="title_activity_guest_nearby_refrigerators">Nearby Refrigerators</string>
+
+</resources>
